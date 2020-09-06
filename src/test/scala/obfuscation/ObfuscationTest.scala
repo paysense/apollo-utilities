@@ -6,8 +6,8 @@ import org.scalatest.funsuite.AnyFunSuite
 class ObfuscationTest extends AnyFunSuite with BeforeAndAfterEach {
 
     test("Simple String Obfuscation: Small String") {
-        val testValue = "abc"
-        val expectedResult = "a"
+        val testValue = "Relax, its only ONES and ZEROS!"
+        val expectedResult = "****************************OS!"
         val result = ObfuscationUtil.simpleStringObfuscation(testValue)
         try assert(
             result == expectedResult , "Verify Test"

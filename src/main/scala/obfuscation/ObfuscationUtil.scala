@@ -2,15 +2,14 @@ package obfuscation
 
 object ObfuscationUtil {
 
-
     def simpleStringObfuscation(value: String) : String = {
       if(value.isEmpty || value == null) {
           value
       } else {
           if(value.length <= 3) {
-              value.replaceAll("\\d(?=\\d{1})", "*")
+              value.replaceAll(".(?=.{2})", "*")
           } else {
-              value.replaceAll("\\d(?=\\d{3})", "*")
+              value.replaceAll(".(?=.{3})", "*")
           }
       }
     }
