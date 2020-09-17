@@ -36,7 +36,7 @@ object Encryption {
 	private val HashingIterations = 9999
 	private val KeySizeBits       = 128
 
-	def hashPassword(password: Array[Char],
+	private def hashPassword(password: Array[Char],
 	                 salt: Array[Byte],
 	                 iterations: Int = HashingIterations,
 	                 keyLength: Int = KeySizeBits,
@@ -52,7 +52,7 @@ object Encryption {
 		}
 	}
 
-	def prepareKey(password: String): SecretKeySpec = new SecretKeySpec(hashPassword(password.toCharArray, KeySalt), AES)
+	private def prepareKey(password: String): SecretKeySpec = new SecretKeySpec(hashPassword(password.toCharArray, KeySalt), AES)
 
 	def encryptData(key: String, input: Any): String = {
 
